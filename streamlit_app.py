@@ -35,7 +35,7 @@ combined = []
 co = []
 
 for j in range(11,12):
-    for i in range(20,24):
+    for i in range(1,24):
         
         month = str(j)
         date = str(i)
