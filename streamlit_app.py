@@ -21,10 +21,11 @@ stocks = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/maste
 
 ### Here starts the web app design
 # Row A
-a1, a2, a3 = st.columns(3)
+a1, a2, a3, a4 = st.columns(4)
 a1.image(Image.open('streamlit-logo-secondary-colormark-darktext.png'))
 a2.metric("Wind", "9 mph", "-8%")
 a3.metric("Humidity", "86%", "4%")
+a4.metric("Humidity", "2%", "40%")
 
 # Row B
 b1, b2, b3, b4 = st.columns(4)
