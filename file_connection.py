@@ -17,7 +17,7 @@ def get_data_from_file():
     print("lof1", list_of_files = glob.glob("/"))
     print("lof2", list_of_files = glob.glob("./"))
     print("lof3", list_of_files = glob.glob("."))
-    latest_file = '.\\csv_data\\data_11_1_16_21.csv'
+    latest_file = '\\csv_data\\data_11_1_16_21.csv'
     
     with open(latest_file, newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
