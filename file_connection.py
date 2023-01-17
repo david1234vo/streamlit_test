@@ -14,9 +14,9 @@ def get_data_from_file():
     while "current" in latest_file:
         latest_file = max(list_of_files, key=os.path.getctime)
         list_of_files.pop(list_of_files.index(latest_file))"""
-    print("lof1", list_of_files = glob.glob("/"))
-    print("lof2", list_of_files = glob.glob("./"))
-    print("lof3", list_of_files = glob.glob("."))
+    print("lof1", glob.glob("/"))
+    print("lof2", glob.glob("./"))
+    print("lof3", glob.glob("."))
     latest_file = '\\csv_data\\data_11_1_16_21.csv'
     
     with open(latest_file, newline='') as csvfile:
