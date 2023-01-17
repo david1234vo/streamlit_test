@@ -7,11 +7,14 @@ import plost                # this package is used to create plots/charts within
 from PIL import Image       # this package is used to put images within streamlit
 from file_connection import get_data_from_file
 #from streamlit_autorefresh import st_autorefresh
+import glob
 
 
 #from api_connection import get_data_from_api       # keep this commented if not using it otherwise brakes the app
 
-
+print("lof1", glob.glob("/"))
+print("lof2", glob.glob("./"))
+print("lof3", glob.glob("."))
 
 # Page setting
 st.set_page_config(layout="wide")
