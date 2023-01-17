@@ -5,12 +5,18 @@ import pandas as pd
 import numpy as np
 import plost                # this package is used to create plots/charts within streamlit
 from PIL import Image       # this package is used to put images within streamlit
-from api_connection import get_data_from_api
+from file_connection import get_data_from_file
+from streamlit_autorefresh import st_autorefresh
+
 
 #from api_connection import get_data_from_api       # keep this commented if not using it otherwise brakes the app
 
+
+
 # Page setting
 st.set_page_config(layout="wide")
+
+st_autorefresh(interval=5000, limit=100)
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -32,44 +38,8 @@ import pprint
 
 
 chart_data = pd.DataFrame(
-    get_data_from_api(),
-    columns=['wind', 'solar', 'gas', 'total'])
+    get_data_from_file().rename(columns={'time':'index'}).set_index('index'),
+    columns=['temperature', 'controlSignal', 'heater'])
 
+st.markdown("<h1 style='text-align: center; color: grey;'>SMART AQUARIUM DATA</h1>", unsafe_allow_html=True)
 st.line_chart(chart_data)
-
-
-"""
-### Here starts the web app design
-# Row A
-a1, a2, a3, a4 = st.columns(4)
-a1.image(Image.open('streamlit-logo-secondary-colormark-darktext.png'))
-a2.metric("Wind", "9 mph", "-8%")
-a3.metric("Humidity", "86%", "4%")
-a4.metric("Humidity", "2%", "40%")
-
-# Row B
-b1, b2, b3, b4 = st.columns(4)
-b1.metric("Temperature", "70 °F", "1.2 °F")
-b2.metric("Wind", "9 mph", "-8%")
-b3.metric("Humidity", "86%", "4%")
-b4.metric("Humidity", "86%", "4%")
-
-# Row C
-c1, c2 = st.columns((7,3))
-with c1:
-    st.markdown('### Heatmap')              # text is created with markdown
-    plost.time_hist(                        # histogram
-    data=seattle_weather,
-    date='date',
-    x_unit='week',
-    y_unit='day',
-    color='temp_max',
-    aggregate='median',
-    legend=None)
-with c2:
-    st.markdown('### Bar chart')
-    plost.donut_chart(                      # donut charts
-        data=stocks,
-        theta='q2',
-        color='company')
-"""
