@@ -7,6 +7,8 @@ import os
 def get_data_from_file():
     
 
+    #list_of_files = glob.glob('C:\\Users\\Tester\\Documents\\upc\\efficient use\\10_11\\*')
+    
     list_of_files = glob.glob('.\\csv_data\\*')
     latest_file = "current"
     while "current" in latest_file:
@@ -38,5 +40,5 @@ def get_data_from_file():
 
     return df
 
-#d = get_data_from_file()
-#print(len(d))
+#get_data_from_file()
+#print("")
