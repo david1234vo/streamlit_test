@@ -8,12 +8,13 @@ def get_data_from_file():
     
 
     #list_of_files = glob.glob('C:\\Users\\Tester\\Documents\\upc\\efficient use\\10_11\\*')
-    
-    list_of_files = glob.glob('.\\csv_data\\*')
+    """
+    list_of_files = glob.glob('.\\csv_data\\data_11_1_16_21.csv')
     latest_file = "current"
     while "current" in latest_file:
         latest_file = max(list_of_files, key=os.path.getctime)
-        list_of_files.pop(list_of_files.index(latest_file))
+        list_of_files.pop(list_of_files.index(latest_file))"""
+    latest_file = '.\\csv_data\\data_11_1_16_21.csv'
     
     with open(latest_file, newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
