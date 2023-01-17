@@ -14,6 +14,7 @@ def get_data_from_file():
     while "current" in latest_file:
         latest_file = max(list_of_files, key=os.path.getctime)
         list_of_files.pop(list_of_files.index(latest_file))"""
+    print("why is this not printing")
     print("lof1", glob.glob("/"))
     print("lof2", glob.glob("./"))
     print("lof3", glob.glob("."))
