@@ -15,8 +15,8 @@ def get_data_from_file():
         latest_file = max(list_of_files, key=os.path.getctime)
         list_of_files.pop(list_of_files.index(latest_file))"""
     print("why is this not printing")
-    print("lof1", glob.glob("/"))
-    print("lof2", glob.glob("./"))
+    print("lof1", glob.glob("\\"))
+    print("lof2", glob.glob(".\\"))
     print("lof3", glob.glob("."))
     latest_file = '\\csv_data\\data_11_1_16_21.csv'
     
@@ -45,5 +45,13 @@ def get_data_from_file():
 
     return df
 
-#get_data_from_file()
-#print("")
+def get_data_from_file():
+    df = pd.DataFrame({
+        'time': [],
+        'temperature': [],
+        "controlSignal": [],
+        "heater": []
+        })
+
+get_data_from_file()
+print("")

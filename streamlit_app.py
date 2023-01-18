@@ -12,9 +12,7 @@ import glob
 
 #from api_connection import get_data_from_api       # keep this commented if not using it otherwise brakes the app
 
-print("lof1", glob.glob("/"))
-print("lof2", glob.glob("./"))
-print("lof3", glob.glob("."))
+
 
 # Page setting
 st.set_page_config(layout="wide")
@@ -38,7 +36,9 @@ import matplotlib.pyplot as plt
 from datetime import date, datetime, timedelta
 import pprint
 
-
+print("lof1", glob.glob("/"))
+print("lof2", glob.glob("./"))
+print("lof3", glob.glob("."))
 
 chart_data = pd.DataFrame(
     get_data_from_file().rename(columns={'time':'index'}).set_index('index'),
