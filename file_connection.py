@@ -54,6 +54,7 @@ def get_data_from_file():
         "controlSignal": [1,0.5,0],
         "heater": [1,1,0]
         })
+    return df
 
 #get_data_from_file()
 #print("")
