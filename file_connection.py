@@ -49,10 +49,10 @@ def get_data_from_file():
 
 def get_data_from_file():
     df = pd.DataFrame({
-        'time': [],
-        'temperature': [],
-        "controlSignal": [],
-        "heater": []
+        'time': [1,2,3],
+        'temperature': [1,2,3],
+        "controlSignal": [1,0.5,0],
+        "heater": [1,1,0]
         })
 
 #get_data_from_file()
