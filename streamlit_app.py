@@ -12,7 +12,7 @@ import glob
 
 #from api_connection import get_data_from_api       # keep this commented if not using it otherwise brakes the app
 
-
+print("starting app")
 
 # Page setting
 st.set_page_config(layout="wide")
@@ -22,10 +22,7 @@ st.set_page_config(layout="wide")
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-# Data
-seattle_weather = pd.read_csv('https://raw.githubusercontent.com/tvst/plost/master/data/seattle-weather.csv', parse_dates=['date'])
-stocks = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/stocks_toy.csv')
-# replace the previous data with your own streamed data from API
+print("printing now??")
 
 # import requests library
 import requests 
@@ -35,6 +32,8 @@ import matplotlib
 import matplotlib.pyplot as plt 
 from datetime import date, datetime, timedelta
 import pprint
+
+print("and now?")
 
 print("lof1", glob.glob("/"))
 print("lof2", glob.glob("./"))
